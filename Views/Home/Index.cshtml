@@ -4,7 +4,7 @@
 
     List<Pizza> pizze = new List<Pizza>();
 
-    Pizza margherita = new Pizza("Margherita", "Pomodoro, Mozzarella", "pizza-margherita.jpg", 5);
+    Pizza margherita = new Pizza("Margherita", "Pomodoro, Mozzarella", "/img/pizza-margherita.jpg", 5);
     Pizza diavola = new Pizza("Diavola", "Pomodoro, Mozzarella, salame piccante", "FOTO", 7);
     Pizza marinara = new Pizza("Marinara", "Pomodoro", "FOTO", 4);
     Pizza salsiccia = new Pizza("Salsiccia", "Pomodoro, Mozzarella, salsiccia", "FOTO", 7);
@@ -19,17 +19,14 @@
     <h1> Pizze</h1>
 
     <ul>
-       
         @foreach(Pizza pizza in pizze){
              <li>
-                <img src="@pizza.Image" alt="@pizza.Name">
+                <img style="width: 200px" src="@pizza.Image" alt="@pizza.Name">
                 @pizza.Name;
                 @pizza.Description;
                 @pizza.Price;
-           
             </li>
         }
-        
     </ul>
     
       
