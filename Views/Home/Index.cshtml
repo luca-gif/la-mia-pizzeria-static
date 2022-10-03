@@ -1,13 +1,16 @@
-﻿
-@{
+﻿@{  <head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+
     Layout = null;
 
     List<Pizza> pizze = new List<Pizza>();
 
     Pizza margherita = new Pizza("Margherita", "Pomodoro, Mozzarella", "/img/pizza-margherita.jpg", 5);
-    Pizza diavola = new Pizza("Diavola", "Pomodoro, Mozzarella, salame piccante", "FOTO", 7);
-    Pizza marinara = new Pizza("Marinara", "Pomodoro", "FOTO", 4);
-    Pizza salsiccia = new Pizza("Salsiccia", "Pomodoro, Mozzarella, salsiccia", "FOTO", 7);
+    Pizza diavola = new Pizza("Diavola", "Pomodoro, Mozzarella, salame piccante", "/img/pizza-margherita.jpg", 7);
+    Pizza marinara = new Pizza("Marinara", "Pomodoro", "/img/pizza-margherita.jpg", 4);
+    Pizza salsiccia = new Pizza("Salsiccia", "Pomodoro, Mozzarella, salsiccia", "/img/pizza-margherita.jpg", 7);
 
     pizze.Add(margherita);
     pizze.Add(diavola);
@@ -18,15 +21,17 @@
 
     <h1> Pizze</h1>
 
-    <ul>
-        @foreach(Pizza pizza in pizze){
-             <li>
-                <img style="width: 200px" src="@pizza.Image" alt="@pizza.Name">
-                @pizza.Name;
-                @pizza.Description;
-                @pizza.Price;
-            </li>
-        }
-    </ul>
+    
+    @foreach(Pizza pizza in pizze){
+        <ul>
+
+            <img style="width: 200px" src="@pizza.Image" alt="@pizza.Name">
+            <li class="card"> Pizza: @pizza.Name</li>
+            <li class="card"> Ingredienti: @pizza.Description</li>
+            <li class="card"> Prezzo: @pizza.Price</li>
+            
+        </ul>
+    }
+   
     
       
